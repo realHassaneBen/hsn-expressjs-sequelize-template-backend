@@ -1,20 +1,20 @@
 import { Permission } from "../models/index.js";
 
-const findAllPermissionsQuery = async (include = []) => {
+export const findAllPermissionsQuery = async (include = []) => {
     const permissions = await Permission.findAll({ include: [...include] });
     return permissions;
 };
 
-const findByPkPermissionQuery = (id) => {
+export const findByPkPermissionQuery = (id) => {
     const permission = Permission.findByPk(id);
     return permission;
 };
-const findOnePermissionQuery = (where) => {
+export const findOnePermissionQuery = (where) => {
     const permission = Permission.findOne({ where });
     return permission;
 };
 
-const createPermissionQuery = async (permission) => {
+export const createPermissionQuery = async (permission) => {
     const { title, description, price, UserId, PermissionId, CategoryId } =
         permission;
 
@@ -31,21 +31,12 @@ const createPermissionQuery = async (permission) => {
     return createdPermission;
 };
 
-const updatePermissionQuery = async (id, permission) => {
+export const updatePermissionQuery = async (id, permission) => {
     await Permission.update(permission, { where: { ...id } });
 };
 
-const deletePermissionQuery = async (id) => {
+export const deletePermissionQuery = async (id) => {
     await Permission.destroy({
         where: id,
     });
-};
-
-export {
-    findAllPermissionsQuery,
-    findByPkPermissionQuery,
-    findOnePermissionQuery,
-    createPermissionQuery,
-    updatePermissionQuery,
-    deletePermissionQuery,
 };

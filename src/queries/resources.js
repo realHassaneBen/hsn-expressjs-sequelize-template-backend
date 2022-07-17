@@ -1,20 +1,20 @@
 import { Resource } from "../models/index.js";
 
-const findAllResourcesQuery = async (include = []) => {
+export const findAllResourcesQuery = async (include = []) => {
     const resources = await Resource.findAll({ include: [...include] });
     return resources;
 };
 
-const findByPkResourceQuery = (id) => {
+export const findByPkResourceQuery = (id) => {
     const resource = Resource.findByPk(id);
     return resource;
 };
-const findOneResourceQuery = (id) => {
+export const findOneResourceQuery = (id) => {
     const resource = Resource.findOne({ where: id });
     return resource;
 };
 
-const createResourceQuery = async (resource) => {
+export const createResourceQuery = async (resource) => {
     const { title, description, price, UserId, ResourceId, CategoryId } =
         resource;
 
@@ -31,21 +31,12 @@ const createResourceQuery = async (resource) => {
     return createdResource;
 };
 
-const updateResourceQuery = async (id, resource) => {
+export const updateResourceQuery = async (id, resource) => {
     await Resource.update(resource, { where: { ...id } });
 };
 
-const deleteResourceQuery = async (id) => {
+export const deleteResourceQuery = async (id) => {
     await Resource.destroy({
         where: id,
     });
-};
-
-export {
-    findAllResourcesQuery,
-    findByPkResourceQuery,
-    findOneResourceQuery,
-    createResourceQuery,
-    updateResourceQuery,
-    deleteResourceQuery,
 };
