@@ -1,14 +1,14 @@
 {
-    "name": "hsn-todos-express.js-sequelize.js-backend",
+    "name": "todos-express.js-sequelize.js-backend",
     "version": "1.0.1",
-    "description": "hsn todos list with express.js and sequelize, backend",
+    "description": "todos list with express.js and sequelize, backend",
     "main": "src/index.js",
     "author": "Hassane Bendaoud <40140987+realHassaneBen@users.noreply.github.com>",
     "license": "MIT",
     "type": "module",
     "private": true,
     "repository": {
-        "url": "https://github.com/realHassaneBen/hsn-todos-express.js-sequelize.js-backend.git",
+        "url": "https://github.com/realHassaneBen/todos-express.js-sequelize.js-backend.git",
         "type": "git",
         "directory": "."
     },
